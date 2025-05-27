@@ -1,6 +1,7 @@
 'use strict';
 
-// Gameboard mit Spielbrett innerhalb
+// Gameboard mit Spielbrett, Erzeugen der 3x3 Zellen, setzen der Zeichen des jeweiligen Player
+// und aktualisierte Ausgabe des Boards mit den Werten in der Konsole
 function gameboard() {
     const rows = 3;
     const columns = 3;
@@ -18,9 +19,7 @@ function gameboard() {
     }
 
     // Nachdem Spielbrett erstellt wurde, gib es zurück
-    const getBoard = () => {
-        board;
-    }
+    const getBoard = () => board;
 
 
     // je nach dem, welcher Spieler dran ist (den suchst du aus)
@@ -30,26 +29,18 @@ function gameboard() {
     // wenn ja, setze player rein
 
     const setToken = (column, row, player) => {
-        const availableCells = board.filter(() => {
-            row[column].getValue() === 0
-        }).map(() => {
-            row[column];
-        })
-
-        if (!availableCells.length) {
-            return
+        if (board[row][column].getValue() !== 0) {
+            return;
         }
         else {
             board[row][column].addToken(player);
         }
     }
 
+    // Aktualisierten Board in der Konsole ausgeben
+    // mit Werten 0, 1 (Player 1), 2 (Player 2)
     const printBoard = () => {
-        const boardWithCellValues = board.map((row) => {
-            row.map((cell => {
-                cell.getValue()
-            }))
-        })
+        const boardWithCellValues = board.map(row => row.map(cell => cell.getValue()))
         console.log(boardWithCellValues);
     }
 
@@ -69,9 +60,7 @@ function cell() {
         value = player;
     }
 
-    const getValue = () => {
-        value;
-    }
+    const getValue = () => value;
 
     return {
         addToken,
