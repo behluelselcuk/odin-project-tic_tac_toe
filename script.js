@@ -83,6 +83,11 @@ function gameboard() {
     }
 }
 
+
+// =========================================================================================================================================
+
+
+
 // Factory-Function zur Erstellung von Zellen
 function cell() {
     let value = 0;
@@ -101,9 +106,12 @@ function cell() {
 }
 
 
+// =========================================================================================================================================
+
+
 
 // Spielablauf mit Spieler als Parameter => Direkt das Spiel starten IIFE
-function gameController(
+const gameController = (function (
     playerOneName = 'Player One',
     playerTwoName = 'Player Two'
 ) {
@@ -159,9 +167,23 @@ function gameController(
     return {
          playRound
     }
-};
+})();
 
 
 // Aufruf der Factory-Function für den Spielablauf
-const game = gameController();
-game.playRound(1, 2);
+gameController.playRound();
+
+
+
+// =========================================================================================================================================
+
+
+
+// DOM-Logik
+function display() {
+    const board = gameboard();
+    board.printBoard();
+
+    const displayDiv = document.querySelector('#board');
+
+}
