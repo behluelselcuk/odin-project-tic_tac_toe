@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 // LOGIK
 
 // Gameboard mit Spielbrett, Erzeugen der 3x3 Zellen, setzen der Zeichen des jeweiligen Player
@@ -113,11 +115,15 @@ function cell() {
 
 
 
+// DOM-LOGIK => SPIELFELD AUF WEBSITE RENDERN
 
 
 
 // =========================================================================================================================================
 
+
+
+// TIC TAC TOE SPIELEN
 
 // Spielablauf mit Spieler als Parameter => Direkt das Spiel starten IIFE
 const gameController = (function (
