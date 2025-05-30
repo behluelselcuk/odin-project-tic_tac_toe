@@ -1,5 +1,7 @@
 'use strict';
 
+// LOGIK
+
 // Gameboard mit Spielbrett, Erzeugen der 3x3 Zellen, setzen der Zeichen des jeweiligen Player
 // und aktualisierte Ausgabe des Boards mit den Werten in der Konsole
 function gameboard() {
@@ -84,7 +86,7 @@ function gameboard() {
 }
 
 
-// =========================================================================================================================================
+// ===================================================
 
 
 
@@ -106,8 +108,15 @@ function cell() {
 }
 
 
+
 // =========================================================================================================================================
 
+
+
+
+
+
+// =========================================================================================================================================
 
 
 // Spielablauf mit Spieler als Parameter => Direkt das Spiel starten IIFE
@@ -171,19 +180,4 @@ const gameController = (function (
 
 
 // Aufruf der Factory-Function für den Spielablauf
-gameController.playRound();
-
-
-
-// =========================================================================================================================================
-
-
-
-// DOM-Logik
-function display() {
-    const board = gameboard();
-    board.printBoard();
-
-    const displayDiv = document.querySelector('#board');
-
-}
+gameController.playRound(0, 1);
